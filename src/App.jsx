@@ -1,10 +1,13 @@
+import Header from "./components/Header"
+import MapGrid from "./components/MapGrid"
 
 
 function App() {
 
   return (
     <>
-      <h1>Safari Zone</h1>
+      <Header />
+      <MapGrid />
     </>
   )
 }
