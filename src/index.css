@@ -1,3 +1,16 @@
 body {
   background-color: bisque;
 }
+
+.map-grid {
+  display: grid;
+  grid-template-columns: 50px 50px 50px 50px 50px;
+  grid-template-rows: 50px 50px 50px 50px 50px;
+  background-color: darkcyan;
+}
+
+.map-tile {
+  background-color: cornflowerblue;
+  border: 2px solid black;
+  margin: 5px;
+}
