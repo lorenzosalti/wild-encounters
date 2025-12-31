@@ -1,35 +1,27 @@
 
 
-function MapGrid() {
+function MapGrid({ map }) {
 
   return (
     <div className="map-grid">
-      <div className="map-tile">tile</div>
-      <div className="map-tile">tile</div>
-      <div className="map-tile">tile</div>
-      <div className="map-tile">tile</div>
-      <div className="map-tile">tile</div>
-      <div className="map-tile">tile</div>
-      <div className="map-tile">tile</div>
-      <div className="map-tile">tile</div>
-      <div className="map-tile">tile</div>
-      <div className="map-tile">tile</div>
-      <div className="map-tile">tile</div>
-      <div className="map-tile">tile</div>
-      <div className="map-tile">tile</div>
-      <div className="map-tile">tile</div>
-      <div className="map-tile">tile</div>
-      <div className="map-tile">tile</div>
-      <div className="map-tile">tile</div>
-      <div className="map-tile">tile</div>
-      <div className="map-tile">tile</div>
-      <div className="map-tile">tile</div>
-      <div className="map-tile">tile</div>
-      <div className="map-tile">tile</div>
-      <div className="map-tile">tile</div>
-      <div className="map-tile">tile</div>
-      <div className="map-tile">tile</div>
+
+      {map.map((row, y) => {
+
+        return (
+          <div className="map-row" key={`${y}`}>
+
+            {row.map((tile, x) => {
+
+              return <div className={`map-tile tile-${tile}`} key={`${x}-${y}`}></div>;
+
+            })}
+
+          </div>)
+
+      })}
+
     </div>
+
   )
 
 }
