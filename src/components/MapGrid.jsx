@@ -12,13 +12,20 @@ function MapGrid({ map }) {
       setPlayerPos((prev => {
         switch (event.key) {
           case "ArrowUp":
-            return { x: prev.x, y: prev.y - 1 }
+            if (map[prev.y - 1][prev.x] === "T") return prev;
+            else return { x: prev.x, y: prev.y - 1 };
+
           case "ArrowDown":
-            return { x: prev.x, y: prev.y + 1 }
+            if (map[prev.y + 1][prev.x] === "T") return prev;
+            else return { x: prev.x, y: prev.y + 1 };
+
           case "ArrowLeft":
-            return { x: prev.x - 1, y: prev.y }
+            if (map[prev.y][prev.x - 1] === "T") return prev;
+            else return { x: prev.x - 1, y: prev.y };
+
           case "ArrowRight":
-            return { x: prev.x + 1, y: prev.y }
+            if (map[prev.y][prev.x + 1] === "T") return prev;
+            else return { x: prev.x + 1, y: prev.y };
         }
       }))
     }
