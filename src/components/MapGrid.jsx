@@ -1,6 +1,10 @@
-
+import { useContext } from "react";
+import Player from "./Player";
+import PlayerPositionContext from "../contexts/PlayerPositionContext";
 
 function MapGrid({ map }) {
+
+  const { playerPos } = useContext(PlayerPositionContext);
 
   return (
     <div className="map-grid">
@@ -12,7 +16,15 @@ function MapGrid({ map }) {
 
             {row.map((tile, x) => {
 
-              return <div className={`map-tile tile-${tile}`} key={`${x}-${y}`}></div>;
+              const isPlayerHere = playerPos.x === x && playerPos.y === y
+
+              return (
+                <div className={`map-tile tile-${tile}`} key={`${x}-${y}`}>
+
+                  {isPlayerHere && <Player />}
+
+                </div>
+              )
 
             })}
 

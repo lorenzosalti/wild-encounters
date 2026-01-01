@@ -8,7 +8,7 @@ import mapOne from "./maps/maps.js"
 
 function App() {
 
-  const [playerPos, setPlayerPos] = useState({ x: 3, y: 0 })
+  const [playerPos, setPlayerPos] = useState({ x: 3, y: 4 })
 
   return (
     <>
