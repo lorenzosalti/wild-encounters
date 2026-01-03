@@ -1,10 +1,10 @@
 import { useContext, useEffect } from "react";
 import Player from "./Player";
-import PlayerPositionContext from "../contexts/PlayerPositionContext";
+import GlobalContext from "../contexts/GlobalContext";
 
 function MapGrid({ map }) {
 
-  const { playerPos, setPlayerPos } = useContext(PlayerPositionContext);
+  const { playerPos, setPlayerPos } = useContext(GlobalContext);
 
   useEffect(() => {
 
