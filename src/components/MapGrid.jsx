@@ -1,34 +1,14 @@
 import { useContext, useEffect } from "react";
 import Player from "./Player";
 import GlobalContext from "../contexts/GlobalContext";
+import EncounterModal from "./EncounterModal"
 
 function MapGrid({ map }) {
 
-  const { playerPos, setPlayerPos, setIsEncounter } = useContext(GlobalContext);
+  const { playerPos, setPlayerPos, isEncounter, handleKeyDown } = useContext(GlobalContext);
+
 
   useEffect(() => {
-
-    const handleKeyDown = (event) => {
-      setPlayerPos((prev => {
-        switch (event.key) {
-          case "ArrowUp":
-            if (map[prev.y - 1][prev.x] === "T") return prev;
-            else return { x: prev.x, y: prev.y - 1 };
-
-          case "ArrowDown":
-            if (map[prev.y + 1][prev.x] === "T") return prev;
-            else return { x: prev.x, y: prev.y + 1 };
-
-          case "ArrowLeft":
-            if (map[prev.y][prev.x - 1] === "T") return prev;
-            else return { x: prev.x - 1, y: prev.y };
-
-          case "ArrowRight":
-            if (map[prev.y][prev.x + 1] === "T") return prev;
-            else return { x: prev.x + 1, y: prev.y };
-        }
-      }))
-    }
 
     window.addEventListener("keydown", handleKeyDown);
 
@@ -39,36 +19,37 @@ function MapGrid({ map }) {
   }, [setPlayerPos])
 
 
-
-
   return (
-    <div className="map-grid">
+    <>
+      <div className="map-grid">
 
-      {map.map((row, y) => {
+        {map.map((row, y) => {
 
-        return (
-          <div className="map-row" key={`${y}`}>
+          return (
+            <div className="map-row" key={`${y}`}>
 
-            {row.map((tile, x) => {
+              {row.map((tile, x) => {
 
-              const isPlayerHere = playerPos.x === x && playerPos.y === y
+                const isPlayerHere = playerPos.x === x && playerPos.y === y
 
-              return (
-                <div className={`map-tile tile-${tile}`} key={`${x}-${y}`}>
+                return (
+                  <div className={`map-tile tile-${tile}`} key={`${x}-${y}`}>
 
-                  {isPlayerHere && <Player />}
-                  {isPlayerHere && map[y][x] === "E" && Math.random() < 0.1 && console.log("ENCOUNTER!!")}
+                    {isPlayerHere && <Player />}
 
-                </div>
-              )
+                  </div>
+                )
 
-            })}
+              })}
 
-          </div>)
+            </div>)
 
-      })}
+        })}
 
-    </div>
+      </div>
+
+      {isEncounter && <EncounterModal />}
+    </>
 
   )
 
