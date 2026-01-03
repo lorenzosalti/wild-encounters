@@ -4,7 +4,7 @@ import GlobalContext from "../contexts/GlobalContext";
 
 function MapGrid({ map }) {
 
-  const { playerPos, setPlayerPos } = useContext(GlobalContext);
+  const { playerPos, setPlayerPos, setIsEncounter } = useContext(GlobalContext);
 
   useEffect(() => {
 
@@ -57,6 +57,7 @@ function MapGrid({ map }) {
                 <div className={`map-tile tile-${tile}`} key={`${x}-${y}`}>
 
                   {isPlayerHere && <Player />}
+                  {isPlayerHere && map[y][x] === "E" && Math.random() < 0.1 && console.log("ENCOUNTER!!")}
 
                 </div>
               )
