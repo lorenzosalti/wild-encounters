@@ -10,11 +10,11 @@ function App() {
 
   const [playerPos, setPlayerPos] = useState({ x: 3, y: 4 });
 
-
+  const [isEncounter, setIsEncounter] = useState(false);
 
   return (
     <>
-      <GlobalContext.Provider value={{ playerPos, setPlayerPos }}>
+      <GlobalContext.Provider value={{ playerPos, setPlayerPos, isEncounter, setIsEncounter }}>
         <Header />
         <MapGrid map={mapOne} />
       </GlobalContext.Provider>
