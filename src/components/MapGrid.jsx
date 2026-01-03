@@ -1,22 +1,14 @@
-import { useContext, useEffect } from "react";
+import { useContext } from "react";
 import Player from "./Player";
 import GlobalContext from "../contexts/GlobalContext";
 import EncounterModal from "./EncounterModal"
 
 function MapGrid({ map }) {
 
-  const { playerPos, setPlayerPos, isEncounter, handleKeyDown } = useContext(GlobalContext);
+  const { playerPos, isEncounter } = useContext(GlobalContext);
 
 
-  useEffect(() => {
 
-    window.addEventListener("keydown", handleKeyDown);
-
-    return () => {
-      window.removeEventListener("keydown", handleKeyDown);
-    };
-
-  }, [setPlayerPos])
 
 
   return (
