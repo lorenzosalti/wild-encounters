@@ -7,10 +7,6 @@ function MapGrid({ map }) {
 
   const { playerPos, isEncounter } = useContext(GlobalContext);
 
-
-
-
-
   return (
     <>
       <div className="map-grid">
