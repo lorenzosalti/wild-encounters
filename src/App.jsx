@@ -55,7 +55,7 @@ function App() {
 
   return (
     <>
-      <GlobalContext.Provider value={{ playerPos, isEncounter }}>
+      <GlobalContext.Provider value={{ playerPos, isEncounter, setIsEncounter }}>
         <Header />
         <MapGrid map={mapOne} />
       </GlobalContext.Provider>
