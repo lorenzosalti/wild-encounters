@@ -54,6 +54,11 @@ body {
 }
 
 .modal h1 {
-  margin: 40vh auto;
+  margin: 40vh auto 30px;
   text-align: center;
+}
+
+.modal button {
+  display: block;
+  margin: 0 auto;
 }
