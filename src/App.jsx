@@ -8,7 +8,7 @@ import mapOne from "./data/maps.js"
 
 function App() {
 
-  const [playerPos, setPlayerPos] = useState({ x: 3, y: 4 });
+  const [playerPos, setPlayerPos] = useState({ x: 32, y: 10 });
   const [isEncounter, setIsEncounter] = useState(false);
 
   useEffect(() => {
