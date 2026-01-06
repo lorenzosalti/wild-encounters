@@ -3,7 +3,7 @@ import MapGrid from "./components/MapGrid"
 import GlobalContext from "./contexts/GlobalContext.js"
 import { useState, useEffect } from "react"
 
-import mapOne from "./maps/maps.js"
+import mapOne from "./data/maps.js"
 
 
 function App() {
