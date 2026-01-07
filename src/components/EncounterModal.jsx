@@ -15,7 +15,7 @@ function EncounterModal() {
     <>
       <div className="modal" id="encounterModal">
 
-        <h1>ENCOUNTER</h1>
+        <h1>A wild "Pokémon" appeared!</h1>
 
         <button type="button" onClick={handleClose}>Close</button>
 
