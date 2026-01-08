@@ -1,4 +1,4 @@
-# Safari Zone – React Web Project
+# Wild Encounters – React Web Project
 
 Questo progetto nasce come **esperimento personale e progetto da portfolio**, con l’obiettivo di creare una **web app interattiva ispirata al concetto della “Zona Safari”** dei giochi Pokémon, utilizzando **React** e JavaScript moderno.
 
