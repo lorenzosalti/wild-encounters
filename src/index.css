@@ -24,6 +24,14 @@ body {
   background-color: brown;
 }
 
+.tile-R {
+  background-color: gray;
+}
+
+.tile-W {
+  background-color: aqua;
+}
+
 .tile-E {
   background-color: green;
 }
