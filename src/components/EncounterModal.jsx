@@ -4,7 +4,7 @@ import GlobalContext from "../contexts/GlobalContext"
 
 function EncounterModal() {
 
-  const { setIsEncounter } = useContext(GlobalContext);
+  const { setIsEncounter, monster } = useContext(GlobalContext);
 
   function handleClose() {
     setIsEncounter(false);
@@ -15,7 +15,7 @@ function EncounterModal() {
     <>
       <div className="modal" id="encounterModal">
 
-        <h1>A wild "Pokémon" appeared!</h1>
+        <h1>A wild {monster.name} appeared!</h1>
 
         <button type="button" onClick={handleClose}>Close</button>
 
