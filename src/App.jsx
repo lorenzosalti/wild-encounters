@@ -9,6 +9,8 @@ import monstersOne from "./data/monsters.js"
 
 function App() {
 
+  const blockingTiles = new Set(["T", "W", "R"]);
+
   const [playerPos, setPlayerPos] = useState({ x: 32, y: 10 });
   const [isEncounter, setIsEncounter] = useState(false);
   const [monster, setMonster] = useState({});
@@ -36,19 +38,19 @@ function App() {
       setPlayerPos((prev => {
         switch (event.key) {
           case "ArrowUp":
-            if (mapOne[prev.y - 1][prev.x] === "T") return prev;
+            if (blockingTiles.has(mapOne[prev.y - 1][prev.x])) return prev;
             else return { x: prev.x, y: prev.y - 1 };
 
           case "ArrowDown":
-            if (mapOne[prev.y + 1][prev.x] === "T") return prev;
+            if (blockingTiles.has(mapOne[prev.y + 1][prev.x])) return prev;
             else return { x: prev.x, y: prev.y + 1 };
 
           case "ArrowLeft":
-            if (mapOne[prev.y][prev.x - 1] === "T") return prev;
+            if (blockingTiles.has(mapOne[prev.y][prev.x - 1])) return prev;
             else return { x: prev.x - 1, y: prev.y };
 
           case "ArrowRight":
-            if (mapOne[prev.y][prev.x + 1] === "T") return prev;
+            if (blockingTiles.has(mapOne[prev.y][prev.x + 1])) return prev;
             else return { x: prev.x + 1, y: prev.y };
         }
       }))
