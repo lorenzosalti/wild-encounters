@@ -22,14 +22,14 @@ function App() {
       setMonster(getRandomMonster(monstersOne));
       setIsEncounter(true);
     }
-  }, [playerPos])
+  }, [playerPos]);
 
   useEffect(() => {
     window.addEventListener("keydown", handleKeyDown);
     return () => {
       window.removeEventListener("keydown", handleKeyDown);
     };
-  }, [setPlayerPos, isEncounter])
+  }, [setPlayerPos, isEncounter]);
 
 
   // UTILITY FUNCTIONS
@@ -61,8 +61,6 @@ function App() {
     const total = monsters.reduce((sum, monster) => sum + monster.spawnRate, 0);
 
     let random = Math.random() * total;
-
-    console.log(random)
 
     for (const monster of monsters) {
       if (random < monster.spawnRate) {
